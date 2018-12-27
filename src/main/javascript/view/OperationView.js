@@ -21,6 +21,11 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.nickname = this.model.nickname;
     this.model.encodedParentId = encodeURIComponent(this.parentId);
 
+    //add
+    // console.log(this.model);
+    this.model.author = this.model.vendorExtensions['x-field-author'] || '无';
+    this.model.vindicator = this.model.vendorExtensions['x-field-vindicator'] || '无';
+
     if (opts.swaggerOptions) {
       this.model.defaultRendering = opts.swaggerOptions.defaultModelRendering;
 

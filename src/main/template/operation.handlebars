@@ -24,6 +24,18 @@
         {{#if deprecated}}
             <h4><span data-sw-translate>Warning: Deprecated</span></h4>
         {{/if}}
+        {{#if author}}
+          <div>
+            <h4><span >作者</span></h4>
+            <span>{{{escape author}}}</span>
+          </div>
+        {{/if}}
+        {{#if vindicator}}
+          <div>
+            <h4><span >维护者</span></h4>
+            <span>{{{escape vindicator}}}</span>
+          </div>
+        {{/if}}
         {{#if description}}
         <h4><span data-sw-translate>Implementation Notes</span></h4>
         <div class="markdown">{{{sanitize description}}}</div>

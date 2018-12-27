@@ -35,6 +35,11 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
 
       operation.nickname = id;
       operation.parentId = this.model.id;
+
+      //add
+      operation.parentId = operation.vendorExtensions['x-field-module-id'] || this.model.id;
+      operation.nickname = operation.vendorExtensions['x-api-id'] || id;
+
       operation.definitions = this.model.definitions; // make Json Schema available for JSonEditor in this operation
       this.addOperation(operation);
     }
